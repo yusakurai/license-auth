@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run-script": "node --experimental-loader=ts-node/esm ./src/index.ts"
+  },
+  "dependencies": {
+    "fastify": "4.25.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
