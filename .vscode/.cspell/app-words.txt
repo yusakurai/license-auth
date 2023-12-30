@@ -1,0 +1,5 @@
+# Custom Dictionary Words
+autodocs
+fastify
+hstack
+turborepo

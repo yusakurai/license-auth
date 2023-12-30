@@ -3,5 +3,35 @@
     {
       "mode": "auto"
     }
+  ],
+  // スペルチェックから除外する単語をまとめたテキストファイルを指定する
+  "cSpell.customDictionaries": {
+    "app-words": {
+      "name": "app-words",
+      "path": "${workspaceRoot}/.vscode/.cspell/app-words.txt",
+      "description": "Words specific to this application",
+      "addWords": true,
+      "scope": "workspace"
+    },
+    "project-words": {
+      "name": "geats-words",
+      "path": "${workspaceRoot}/.vscode/.cspell/project-words.txt",
+      "description": "Project Words",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+  // スペルチェックを行わないファイルパスを指定する
+  "cSpell.ignorePaths": [
+    ".git",
+    ".github",
+    ".vscode",
+    ".turbo",
+    "node_modules",
+    "pnpm-lock.yaml",
+    "package.json",
+    "next.config.js",
+    "panda.config.ts",
+    "postcss.config.cjs"
   ]
 }
