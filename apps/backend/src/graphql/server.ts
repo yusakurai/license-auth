@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server'
 import { fastifyApolloDrainPlugin } from '@as-integrations/fastify'
 
-import { schema } from './scheme.js'
+import { schema } from './schema/index.js'
 
 import type { Context } from './context.js'
 import type { FastifyInstance } from 'fastify'
