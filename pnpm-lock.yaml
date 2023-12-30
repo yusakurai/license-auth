@@ -21,6 +21,8 @@ importers:
         specifier: latest
         version: 1.11.2
 
+  apps/backend: {}
+
   apps/docs:
     dependencies:
       '@repo/ui':
