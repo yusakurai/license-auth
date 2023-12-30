@@ -2,4 +2,5 @@
 autodocs
 fastify
 hstack
+pothos
 turborepo

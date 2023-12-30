@@ -41,6 +41,9 @@ importers:
       '@fastify/rate-limit':
         specifier: 9.0.1
         version: 9.0.1
+      '@pothos/core':
+        specifier: 3.41.0
+        version: 3.41.0(graphql@16.8.1)
       fastify:
         specifier: 4.25.2
         version: 4.25.2
@@ -993,6 +996,14 @@ packages:
       picocolors: 1.0.0
       tslib: 2.6.2
     dev: true
+
+  /@pothos/core@3.41.0(graphql@16.8.1):
+    resolution: {integrity: sha512-Nb7uPDTXVjdrWqHs5aoD1r6JEdQ9FnJYlf7gv47o1b/bb8rVDAZQaviVvaChal7YQcyFGgCFb0/YNNHLNBEjNw==}
+    peerDependencies:
+      graphql: '>=15.1.0'
+    dependencies:
+      graphql: 16.8.1
+    dev: false
 
   /@protobufjs/aspromise@1.1.2:
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
