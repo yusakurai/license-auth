@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Backend",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2022",
+    "incremental": true,
+    "noEmit": false,
+    "sourceMap": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "isolatedModules": false
+    },
+    "esm": true
+  },
+  "include": ["src"]
+}
