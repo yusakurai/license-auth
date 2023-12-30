@@ -1,0 +1,20 @@
+#====================================
+#              変数
+#====================================
+@baseUrl = http://0.0.0.0:65535
+#====================================
+#　        Sample Action
+#====================================
+
+### root
+GET {{baseUrl}}
+
+### graphql
+POST {{baseUrl}}/graphql
+content-type: application/json
+
+{
+  "query": "query Query($userId: ID!) {user(id: $userId) { id fullName comments{ id comment } posts{ id title content} } }",
+  "variables": {"userId":"2"}
+}
+
