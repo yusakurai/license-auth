@@ -21,9 +21,15 @@ type Query {
 
 type User {
   comments: [Comment!]!
+
+  """名"""
   firstName: String!
   fullName: String!
+
+  """ユーザーID"""
   id: ID!
+
+  """姓"""
   lastName: String!
   posts: [Post!]!
 }

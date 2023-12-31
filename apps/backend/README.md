@@ -18,6 +18,9 @@ http://0.0.0.0:65535/graphql
 
 ## Generating a schema.graphql file & TypeScript types
 
+`graphql.ts` と `schema.graphql` を更新するには以下のコマンドを実行します。  
+`/graphql/generated/` に生成されます。
+
 ```bash
 $ pnpm generate
 ```

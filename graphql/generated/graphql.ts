@@ -58,9 +58,12 @@ export type QueryUserArgs = {
 export type User = {
   __typename?: 'User';
   comments: Array<Comment>;
+  /** 名 */
   firstName: Scalars['String']['output'];
   fullName: Scalars['String']['output'];
+  /** ユーザーID */
   id: Scalars['ID']['output'];
+  /** 姓 */
   lastName: Scalars['String']['output'];
   posts: Array<Post>;
 };

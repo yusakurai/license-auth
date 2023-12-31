@@ -10,9 +10,9 @@ export const User = builder.objectRef<IUser>('User')
 
 User.implement({
   fields: (t) => ({
-    id: t.exposeID('id'),
-    firstName: t.exposeString('firstName'),
-    lastName: t.exposeString('lastName'),
+    id: t.exposeID('id', { description: 'ユーザーID' }),
+    firstName: t.exposeString('firstName', { description: '名' }),
+    lastName: t.exposeString('lastName', { description: '姓' }),
     fullName: t.string({
       resolve: (user) => `${user.firstName} ${user.lastName}`,
     }),
