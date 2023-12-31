@@ -15,3 +15,9 @@ Apollo Graphql Explorer は、サーバーを起動したあとに以下の URL 
 ```bash
 http://0.0.0.0:65535/graphql
 ```
+
+## Generating a schema.graphql file & TypeScript types
+
+```bash
+$ pnpm generate
+```
