@@ -1,0 +1,20 @@
+{
+  "name": "panda-preset",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format=esm,cjs --clean --dts --external @pandacss/dev"
+  },
+  "dependencies": {
+    "@pandacss/dev": "^0.23.0"
+  },
+  "devDependencies": {
+    "@pandacss/types": "^0.23.0",
+    "@repo/typescript-config": "workspace:*",
+    "tsup": "^8.0.1"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

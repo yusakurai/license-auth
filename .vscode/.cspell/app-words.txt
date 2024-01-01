@@ -3,6 +3,7 @@ autodocs
 Codegen
 fastify
 hstack
+pandacss
 pothos
 turborepo
 vitest
