@@ -8,7 +8,9 @@
     "dev": "nodemon",
     "build": "tsc",
     "start": "node ./dist",
-    "generate": "graphql-codegen --config ./src/graphql/codegen.ts"
+    "generate": "graphql-codegen --config ./src/graphql/codegen.ts",
+    "lint": "eslint './src/**/{*.js,*.cjs,*.ts}' --max-warnings 0",
+    "lint:fix": "eslint './src/**/{*.js,*.cjs,*.ts}' --fix"
   },
   "nodemonConfig": {
     "ignore": [

@@ -1,10 +1,9 @@
-import Fastify from 'fastify'
 import fastifyApollo from '@as-integrations/fastify'
-
 import compress from '@fastify/compress'
 import cors from '@fastify/cors'
 import helmet from '@fastify/helmet'
 import rateLimit from '@fastify/rate-limit'
+import Fastify from 'fastify'
 
 import { createApolloServer } from './graphql/server.js'
 
@@ -23,9 +22,7 @@ await app.register(fastifyApollo(apollo))
 app.get('/', () => 'This is backend!')
 
 try {
-  const port = 65_535
   await app.listen({ host: '0.0.0.0', port: PORT })
 } catch (err) {
   app.log.error(err)
-  process.exit(1)
 }

@@ -1,8 +1,8 @@
-import { Posts, Users } from '../data.js'
 
 import { builder } from './builder.js'
 import { Post } from './post.js'
 import { User } from './user.js'
+import { Posts, Users } from '../data.js'
 
 import type { IComment } from '../data.js'
 
