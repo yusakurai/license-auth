@@ -1,5 +1,5 @@
 {
-  "name": "panda-preset",
+  "name": "@repo/panda-preset",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
