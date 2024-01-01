@@ -1,27 +1,38 @@
 {
   "name": "@repo/ui",
-  "version": "0.0.0",
   "private": true,
+  "main": "dist/index.mjs",
+  "types": "dist/types/index.d.ts",
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.mjs"
+    }
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
+    "panda:gen": "panda codegen",
+    "ship": "panda ship src/**/*.tsx --outfile dist/panda.json",
+    "build:style": "pnpm panda:gen && pnpm ship",
+    "build": "pnpm build:style && vite build && tsc --project tsconfig.build.json",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@pandacss/dev": "0.23.0",
     "@repo/eslint-config": "workspace:*",
+    "@repo/panda-preset": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "1.10.12",
-    "@types/node": "20.5.2",
     "@types/eslint": "8.44.7",
+    "@types/node": "20.5.2",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
+    "@vitejs/plugin-react": "4.2.1",
     "eslint": "8.53.0",
     "react": "18.2.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vite": "5.0.10"
   },
   "volta": {
     "extends": "../../package.json"
