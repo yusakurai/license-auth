@@ -13,6 +13,11 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "test": {},
+    "test:coverage": {},
+    "test:watch": {
+      "cache": false
     }
   }
 }

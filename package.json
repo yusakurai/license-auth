@@ -8,7 +8,10 @@
     "lint:prettier:fix": "turbo run lint:prettier:fix",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage",
+    "test:watch": "turbo test:watch"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

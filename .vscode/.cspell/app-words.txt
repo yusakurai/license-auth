@@ -5,3 +5,4 @@ fastify
 hstack
 pothos
 turborepo
+vitest
