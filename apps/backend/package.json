@@ -9,6 +9,8 @@
     "build": "tsc",
     "start": "node ./dist",
     "generate": "graphql-codegen --config ./src/graphql/codegen.ts",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --check --write",
     "lint": "eslint './src/**/{*.js,*.cjs,*.ts}' --max-warnings 0",
     "lint:fix": "eslint './src/**/{*.js,*.cjs,*.ts}' --fix"
   },

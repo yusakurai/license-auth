@@ -6,6 +6,8 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --check --write",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix"
   },
