@@ -1,4 +1,4 @@
-
+/* eslint-disable no-redeclare */
 import { builder } from './builder.js'
 import { Comment } from './comment.js'
 import { Post } from './post.js'

@@ -1,4 +1,3 @@
-
 import { builder } from './builder.js'
 import { Post } from './post.js'
 import { User } from './user.js'
@@ -6,6 +5,7 @@ import { Posts, Users } from '../data.js'
 
 import type { IComment } from '../data.js'
 
+// eslint-disable-next-line no-redeclare
 export const Comment = builder.objectRef<IComment>('Comment')
 
 Comment.implement({
