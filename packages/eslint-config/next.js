@@ -63,10 +63,6 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    '.*.js',
-    'node_modules/',
-  ],
+  ignorePatterns: ['.*.js', 'node_modules/', 'postcss.config.cjs'],
   overrides: [{ files: ['*.js?(x)', '*.ts?(x)'] }],
 }

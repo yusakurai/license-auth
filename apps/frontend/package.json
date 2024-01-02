@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "panda:gen": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -22,7 +23,9 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.0.2",
+    "@pandacss/dev": "0.23.0",
     "@repo/eslint-config": "workspace:*",
+    "@repo/panda-preset": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/eslint": "8.44.7",
     "@types/node": "18.0.0",
