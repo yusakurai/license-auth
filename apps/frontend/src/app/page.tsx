@@ -1,15 +1,24 @@
-'use client'
-
+import { gql } from '@apollo/client'
 import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
 import { Button } from '@repo/ui'
 
 import { Counter } from '@/components'
+import { getClient } from '@/lib/apollo/client'
 
-export default function Page(): JSX.Element {
-  const handleClick = (): void => {
-    console.log('Not logged because default is prevented.')
+const query = gql`
+  query {
+    pokemon(name: "Raichu") {
+      name
+    }
   }
+`
+
+export default async function Page(): Promise<JSX.Element> {
+  const { data } = await getClient().query<{ pokemon: { name: string } }>({
+    query,
+  })
+
   return (
     <main>
       <h1 className={css({ color: 'primary' })}>H1 Hello Primary🐼!</h1>
@@ -29,11 +38,9 @@ export default function Page(): JSX.Element {
         <Button variant="solid">Button Solid</Button>
         <Button variant="outline">Button Outline</Button>
         <Button variant="ghost">Button Ghost</Button>
-        <Button onClick={handleClick}>
-          <a href="https://www.radix-ui.com/">Radix UI</a>
-        </Button>
       </div>
       <Counter />
+      <div>{data.pokemon.name}</div>
     </main>
   )
 }
