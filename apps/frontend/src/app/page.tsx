@@ -2,6 +2,8 @@ import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
 import { Button } from '@repo/ui'
 
+import { Counter } from '@/components'
+
 export default function Page(): JSX.Element {
   return (
     <main>
@@ -23,6 +25,7 @@ export default function Page(): JSX.Element {
         <Button variant="outline">Button Outline</Button>
         <Button variant="ghost">Button Ghost</Button>
       </div>
+      <Counter />
     </main>
   )
 }
