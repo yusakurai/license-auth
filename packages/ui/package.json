@@ -16,13 +16,15 @@
     "ship": "panda ship src/**/*.tsx --outfile dist/panda.json",
     "build:style": "pnpm panda:gen && pnpm ship",
     "build": "pnpm build:style && vite build && tsc --project tsconfig.build.json",
-    "generate:component": "turbo gen react-component"
+    "generate:component": "turbo gen react-component",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@pandacss/dev": "0.23.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/panda-preset": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@testing-library/react": "14.1.2",
     "@turbo/gen": "1.10.12",
     "@types/eslint": "8.44.7",
     "@types/node": "20.5.2",
@@ -32,7 +34,8 @@
     "eslint": "8.53.0",
     "react": "18.2.0",
     "typescript": "5.2.2",
-    "vite": "5.0.10"
+    "vite": "5.0.10",
+    "vitest": "1.1.1"
   },
   "volta": {
     "extends": "../../package.json"
