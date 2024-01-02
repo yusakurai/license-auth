@@ -18,6 +18,9 @@
     "test:coverage": {},
     "test:watch": {
       "cache": false
+    },
+    "clean": {
+      "cache": false
     }
   }
 }

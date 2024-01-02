@@ -3,6 +3,9 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "clean:dist": "pnpm -r exec rimraf dist",
+    "clean:node_modules": "pnpm -r exec rimraf node_modules && pnpm rimraf node_modules",
+    "clean": "turbo run clean && pnpm rimraf .turbo && pnpm clean:dist && pnpm clean:node_modules",
     "dev": "turbo dev",
     "lint:prettier": "turbo run lint:prettier",
     "lint:prettier:fix": "turbo run lint:prettier:fix",
@@ -17,6 +20,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "prettier": "3.1.0",
+    "rimraf": "5.0.5",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.9.0",

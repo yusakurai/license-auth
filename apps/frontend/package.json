@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "panda:gen": "panda codegen",
+    "clean": "pnpm clean:next",
+    "clean:next": "rimraf .next",
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm panda:gen && next build",
     "start": "next start",
     "lint:prettier": "prettier . --check",
     "lint:prettier:fix": "prettier . --check --write",
