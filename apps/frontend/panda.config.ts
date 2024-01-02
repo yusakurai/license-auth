@@ -12,8 +12,8 @@ export default defineConfig({
     './src/components/**/*.{ts,tsx,js,jsx}',
     './src/app/**/*.{ts,tsx,js,jsx}',
     './src/features/**/*.{ts,tsx,js,jsx}',
-    './node_modules/ui/dist/panda.json',
-    './node_modules/ui/src/**/*.tsx',
+    './node_modules/@repo/ui/dist/panda.json',
+    './node_modules/@repo/ui/src/**/*.tsx',
   ],
 
   // Files to exclude
