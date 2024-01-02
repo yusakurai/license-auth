@@ -7,10 +7,10 @@ export const corePreset = definePreset({
       semanticTokens: {
         colors: {
           primary: {
-            DEFAULT: { value: '#000000' },
+            DEFAULT: { value: '#008b8b' },
           },
           secondary: {
-            DEFAULT: { value: '#999999' },
+            DEFAULT: { value: '#f08080' },
           },
         },
       },
