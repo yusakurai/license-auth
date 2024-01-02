@@ -1,3 +1,5 @@
+'use client'
+
 import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
 import { Button } from '@repo/ui'
@@ -5,6 +7,9 @@ import { Button } from '@repo/ui'
 import { Counter } from '@/components'
 
 export default function Page(): JSX.Element {
+  const handleClick = (): void => {
+    console.log('Not logged because default is prevented.')
+  }
   return (
     <main>
       <h1 className={css({ color: 'primary' })}>H1 Hello Primary🐼!</h1>
@@ -24,6 +29,9 @@ export default function Page(): JSX.Element {
         <Button variant="solid">Button Solid</Button>
         <Button variant="outline">Button Outline</Button>
         <Button variant="ghost">Button Ghost</Button>
+        <Button onClick={handleClick}>
+          <a href="https://www.radix-ui.com/">Radix UI</a>
+        </Button>
       </div>
       <Counter />
     </main>

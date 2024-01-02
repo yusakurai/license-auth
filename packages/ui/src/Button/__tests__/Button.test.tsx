@@ -12,17 +12,17 @@ describe('Button', () => {
     })
   })
 
-  // describe('Props', () => {
-  //   test('asChildがtrueの場合、button要素がレンダリングされないか', () => {
-  //     const { container } = render(
-  //       <Button asChild>
-  //         <a href="https://example.com/">example.com</a>
-  //       </Button>
-  //     )
+  describe('Props', () => {
+    test('asChildがtrueの場合、button要素がレンダリングされないか', () => {
+      const { container } = render(
+        <Button asChild>
+          <a href="https://example.com/">example.com</a>
+        </Button>
+      )
 
-  //     expect(container.querySelector('button')).toBeNull()
-  //   })
-  // })
+      expect(container.querySelector('button')).toBeNull()
+    })
+  })
 
   describe('Events', () => {
     test('クリックされるか', () => {

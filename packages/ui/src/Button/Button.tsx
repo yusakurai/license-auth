@@ -1,4 +1,4 @@
-// import { Slot } from '@radix-ui/react-slot'
+import { Slot } from '@radix-ui/react-slot'
 import type { RecipeVariantProps } from '@license-auth/styled-system/css'
 import { cva } from '@license-auth/styled-system/css'
 import * as React from 'react'
@@ -115,8 +115,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, size, colors, asChild = false, ...props }, ref) => {
-    const Component = 'button'
-    // const Component = asChild ? Slot : 'button'
+    const Component = asChild ? Slot : 'button'
 
     return <Component className={buttonStyle({ variant, size, colors })} ref={ref} {...props} />
   }
