@@ -1,1 +1,1 @@
-# panda-preset
+# @repo/panda-preset
