@@ -4,7 +4,7 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 
 module.exports = {
   extends: ['eslint:recommended', 'prettier', 'eslint-config-turbo'],
-  plugins: ['only-warn', 'import', 'unused-imports'],
+  plugins: ['only-warn', 'import', 'unused-imports', 'jest'],
   rules: {
     'turbo/no-undeclared-env-vars': 'off', // dotenvを使う場合はoffにする
     'unused-imports/no-unused-imports': 'warn',
@@ -53,5 +53,6 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'dist/', 'jest.config.ts', '.eslintrc.cjs'],
   env: {
     node: true,
+    'jest/globals': true,
   },
 }
