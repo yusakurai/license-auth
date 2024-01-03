@@ -1,10 +1,8 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
-    "build": "tsc",
     "dev": "tsx watch --env-file=.env ./src/index.ts",
     "server:dev": "node --enable-source-maps dist/index.js",
     "server:test": "node --enable-source-maps dist/index.js",
