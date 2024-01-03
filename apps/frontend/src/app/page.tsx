@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
-import { Button } from '@repo/ui'
+import { Button, Icon } from '@repo/ui'
 
 import { Counter } from '@/components'
 import { getClient } from '@/lib/apollo/client'
@@ -41,6 +41,11 @@ export default async function Page(): Promise<JSX.Element> {
       </div>
       <Counter />
       <div>{data.pokemon.name}</div>
+      <div className={flex({ gap: 8, align: 'center' })}>
+        <Icon name="User" />
+        <Icon name="User" size="lg" color="secondary" />
+        <Icon name="Clock" size="sm" />
+      </div>
     </main>
   )
 }
