@@ -22,6 +22,9 @@ await app.register(fastifyApollo(apollo))
 app.get('/', () => 'This is backend!')
 
 try {
+  console.log('Starting server...')
+  console.log(`Listening on port ${PORT}`)
+  console.log(`GraphQL server at http://localhost:${PORT}/graphql`)
   await app.listen({ host: '0.0.0.0', port: PORT })
 } catch (err) {
   app.log.error(err)

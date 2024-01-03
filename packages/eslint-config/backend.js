@@ -50,4 +50,7 @@ module.exports = {
     },
   },
   ignorePatterns: ['node_modules/', 'dist/', 'jest.config.ts', '.eslintrc.cjs'],
+  env: {
+    node: true,
+  },
 }
