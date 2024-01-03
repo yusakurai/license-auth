@@ -5,27 +5,32 @@ import helmet from '@fastify/helmet'
 import rateLimit from '@fastify/rate-limit'
 import Fastify from 'fastify'
 
+import { createContext } from './graphql/context.js'
 import { createApolloServer } from './graphql/server.js'
 
-const PORT = 65_535
+const graphqlPath = process.env.GRAPHQL_PATH
+
 const app = Fastify()
-
-await app.register(helmet, { contentSecurityPolicy: false })
-await app.register(rateLimit)
-await app.register(cors)
-await app.register(compress)
-
 const apollo = createApolloServer({ app })
 await apollo.start()
-await app.register(fastifyApollo(apollo))
 
-app.get('/', () => 'This is backend!')
+await app.register(helmet, { contentSecurityPolicy: process.env.NODE_ENV === 'production' })
+await app.register(cors)
+await app.register(rateLimit)
+await app.register(compress)
+await app.register(fastifyApollo(apollo), {
+  path: graphqlPath,
+  context: createContext,
+})
+
+app.get('/', () => 'This is license-auth backend!')
 
 try {
+  const port = process.env.PORT
   console.log('Starting server...')
-  console.log(`Listening on port ${PORT}`)
-  console.log(`GraphQL server at http://localhost:${PORT}/graphql`)
-  await app.listen({ host: '0.0.0.0', port: PORT })
+  console.log(`Listening on port ${port}`)
+  console.log(`🚀 GraphQL server at http://localhost:${port}${graphqlPath}`)
+  await app.listen({ host: '0.0.0.0', port: port })
 } catch (err) {
   app.log.error(err)
 }
