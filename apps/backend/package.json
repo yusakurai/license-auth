@@ -4,25 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "run-script": "node --experimental-loader=ts-node/esm ./src/index.ts",
-    "dev": "nodemon",
     "build": "tsc",
-    "start": "node ./dist",
-    "generate": "graphql-codegen --config ./src/graphql/codegen.ts",
+    "dev": "tsx watch --env-file=.env ./src/index.ts",
+    "server:dev": "node --enable-source-maps dist/index.js",
+    "server:test": "node --enable-source-maps dist/index.js",
+    "server:prd": "node --enable-source-maps dist/index.js",
     "lint:prettier": "prettier . --check",
     "lint:prettier:fix": "prettier . --check --write",
     "lint": "eslint './src/**/{*.js,*.cjs,*.ts}' --max-warnings 0",
-    "lint:fix": "eslint './src/**/{*.js,*.cjs,*.ts}' --fix"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "*.test.ts"
-    ],
-    "exec": "node --env-file=.env --experimental-loader=ts-node/esm/transpile-only ./src/index.ts",
-    "ext": "ts,js,json",
-    "watch": [
-      "src"
-    ]
+    "lint:fix": "eslint './src/**/{*.js,*.cjs,*.ts}' --fix",
+    "generate": "graphql-codegen --config ./src/graphql/codegen.ts"
   },
   "dependencies": {
     "@apollo/server": "4.9.5",
@@ -44,8 +35,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "20.10.6",
-    "nodemon": "3.0.2",
-    "ts-node": "10.9.2",
+    "tsx": "4.7.0",
     "typescript": "5.2.2"
   },
   "volta": {
