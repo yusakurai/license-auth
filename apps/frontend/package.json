@@ -25,7 +25,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.0.2",
+    "@next/eslint-plugin-next": "14.0.4",
     "@pandacss/dev": "0.23.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/panda-preset": "workspace:*",
