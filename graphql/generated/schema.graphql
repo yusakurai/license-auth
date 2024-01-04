@@ -1,8 +1,3 @@
-type AuthResponse {
-  """アクセストークン"""
-  accessToken: JWT!
-}
-
 type Comment {
   author: User
   comment: String!
@@ -25,10 +20,22 @@ A field whose value conforms to the standard internet email address format as sp
 """
 scalar EmailAddress
 
+input EmailAndPasswordInput {
+  """メールアドレス"""
+  email: EmailAddress!
+
+  """パスワード"""
+  password: String!
+}
+
 """
 A field whose value is a JSON Web Token (JWT): https://jwt.io/introduction.
 """
 scalar JWT
+
+type Mutation {
+  signIn(input: EmailAndPasswordInput!): SignInResponse!
+}
 
 type Post {
   author: User
@@ -41,8 +48,12 @@ type Post {
 type Query {
   post(id: ID!): Post
   posts(skip: Int, take: Int): [Post!]
-  signIn(email: EmailAddress!, password: String!): AuthResponse!
   user(id: ID!): User
+}
+
+type SignInResponse {
+  """アクセストークン"""
+  accessToken: JWT!
 }
 
 """
