@@ -1,4 +1,4 @@
-import { Users } from '../../data.js'
+import { Users } from '../../dummyData.js'
 import { builder } from '../builder.js'
 import { User } from '../object/user.js'
 
