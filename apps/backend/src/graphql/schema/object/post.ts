@@ -1,10 +1,8 @@
 /* eslint-disable no-redeclare */
-import { builder } from './builder.js'
 import { Comment } from './comment.js'
 import { User } from './user.js'
-import { Comments, Users } from '../data.js'
-
-import type { IPost } from '../data.js'
+import { Comments, Users, IPost } from '../../data.js'
+import { builder } from '../builder.js'
 
 export const Post = builder.objectRef<IPost>('Post')
 

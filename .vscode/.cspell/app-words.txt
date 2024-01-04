@@ -2,7 +2,9 @@
 autodocs
 Codegen
 fastify
+firestore
 hstack
+neverthrow
 pandacss
 pothos
 turborepo
