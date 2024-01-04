@@ -40,7 +40,7 @@
     "@storybook/react-vite": "^7.6.7",
     "@storybook/test": "^7.6.7",
     "@testing-library/react": "14.1.2",
-    "@turbo/gen": "1.10.12",
+    "@turbo/gen": "1.11.2",
     "@types/eslint": "8.44.7",
     "@types/node": "20.5.2",
     "@types/react": "18.2.46",
