@@ -1,4 +1,4 @@
-import { Posts } from '../../dummyData.js'
+import { Posts } from '../../dummy-data.js'
 import { builder } from '../builder.js'
 import { Post } from '../object/post.js'
 

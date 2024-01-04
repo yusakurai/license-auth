@@ -1,6 +1,6 @@
 import { Post } from './post.js'
 import { User } from './user.js'
-import { Posts, Users, IComment } from '../../dummyData.js'
+import { Posts, Users, IComment } from '../../dummy-data.js'
 import { builder } from '../builder.js'
 
 export const Comment = builder.objectRef<IComment>('Comment')
