@@ -1,0 +1,53 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 20
+    reviewers:
+      - 'yusakurai'
+    labels:
+      - 'dependencies'
+      - 'ignore-for-release'
+    groups:
+      storybook:
+        patterns:
+          - 'storybook'
+          - '@storybook/*'
+      next:
+        patterns:
+          - 'next'
+      eslint:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+      radix:
+        patterns:
+          - '@radix-ui/*'
+      pandacss:
+        patterns:
+          - '@pandacss/*'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: weekly
+    reviewers:
+      - 'yusakurai'
+    labels:
+      - 'dependencies'
