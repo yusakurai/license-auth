@@ -27,8 +27,8 @@ app.get('/', () => 'This is license-auth backend!')
 
 try {
   const port = process.env.PORT
-  console.log('Starting server...')
-  console.log(`Listening on port ${port}`)
+  console.log('🏗 Starting server...')
+  console.log(`✨ Listening on port ${port}`)
   console.log(`🚀 GraphQL server at http://localhost:${port}${graphqlPath}`)
   await app.listen({ host: '0.0.0.0', port: port })
 } catch (err) {
