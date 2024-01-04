@@ -17,7 +17,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@apollo/server": "4.9.5",
+    "@apollo/server": "4.10.0",
     "@as-integrations/fastify": "2.1.1",
     "@fastify/compress": "6.5.0",
     "@fastify/cors": "8.5.0",
