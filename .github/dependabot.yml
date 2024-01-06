@@ -42,6 +42,10 @@ updates:
       pandacss:
         patterns:
           - '@pandacss/*'
+      turbo:
+        patterns:
+          - 'turbo'
+          - '@turbo/*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
