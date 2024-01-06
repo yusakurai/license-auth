@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['only-warn', 'import', 'unused-imports'],
   rules: {
+    'turbo/no-undeclared-env-vars': 'off', // envを使う場合はoffにする
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': 'off',
     'import/order': [
