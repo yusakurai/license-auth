@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 
-import { sum } from '../utils/sum'
+import { sum } from '../sum'
 
 test('adds 1 + 2 to equal 3', () => {
   // sum関数の引数に1,2を渡している
