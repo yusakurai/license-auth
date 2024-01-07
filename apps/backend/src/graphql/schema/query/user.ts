@@ -9,6 +9,9 @@ builder.queryField('user', (t) =>
     args: {
       id: t.arg.id({ required: true }),
     },
+    authScopes: {
+      loggedIn: true,
+    },
     resolve: (root, arguments_) => Users.get(String(arguments_.id)),
   })
 )

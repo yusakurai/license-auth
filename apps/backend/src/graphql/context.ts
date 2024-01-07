@@ -1,11 +1,17 @@
+import { AuthRepository } from '../repository/index.js'
+
 import type { ApolloFastifyContextFunction } from '@as-integrations/fastify'
 
 export interface Context {
-  userId: string
+  uid: string | undefined
 }
 
-export const createContext: ApolloFastifyContextFunction<Context> = async () => {
+export const createContext: ApolloFastifyContextFunction<Context> = async (request) => {
+  const authorization = request.headers.authorization
+  const token = authorization?.replace('Bearer ', '') ?? ''
+  const result = await AuthRepository.verifyIdToken(token)
+  const uid = result.isOk() ? result.value : undefined
   return {
-    userId: 'hoge',
+    uid,
   }
 }
