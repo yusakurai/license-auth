@@ -16,6 +16,7 @@ import './query/user.js'
 /**
  * Mutation
  */
-import './mutation/sign-in.js'
+import './mutation/create-account.js'
+import './mutation/update-account.js'
 
 export const schema: GraphQLSchema = builder.toSchema()

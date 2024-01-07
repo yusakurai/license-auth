@@ -1,39 +1,63 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-import { ResultAsync } from 'neverthrow'
+import { ok, ResultAsync } from 'neverthrow'
 
-import { authentication, firebaseError } from '../lib/index.js'
+import { firebaseAuthError, getAuth } from '../lib/index.js'
 
-type EmailAndPassword = {
+type UpdateAccountResult = {
+  uid: string
   email: string
-  password: string
 }
+
+type CreateAccountResult = UpdateAccountResult
 
 export namespace AuthRepository {
   /**
-   * メールアドレスとパスワードでログインする
+   * 認証アカウントを作成する
    */
-  export const signIn = ({ email, password }: EmailAndPassword): ResultAsync<string, Error> => {
-    return ResultAsync.fromPromise(
-      signInWithEmailAndPassword(authentication, email, password),
-      (error) => firebaseError('ログインに失敗しました', error)
-    ).andThen((userCredential) => {
-      return ResultAsync.fromPromise(userCredential.user.getIdToken(), (error) =>
-        firebaseError('アクセストークンの取得に失敗しました', error)
-      )
-    })
+  export const createAccount = ({
+    email,
+    password,
+  }: {
+    email: string
+    password: string
+  }): ResultAsync<CreateAccountResult, Error> => {
+    return ResultAsync.fromPromise(getAuth().createUser({ email, password }), (error) =>
+      firebaseAuthError(error, 'アカウント作成に失敗しました')
+    ).andThen((userRecord) =>
+      ok({
+        uid: userRecord.uid,
+        email: userRecord.email!,
+      })
+    )
   }
 
   /**
-   * メールアドレスとパスワードで認証ユーザーを作成する
+   * 認証アカウントを更新する
    */
-  export const createUser = ({ email, password }: EmailAndPassword): ResultAsync<string, Error> => {
-    return ResultAsync.fromPromise(
-      createUserWithEmailAndPassword(authentication, email, password),
-      (error) => firebaseError('アカウント作成に失敗しました', error)
-    ).andThen((userCredential) => {
-      return ResultAsync.fromPromise(userCredential.user.getIdToken(), (error) =>
-        firebaseError('アクセストークンの取得に失敗しました', error)
-      )
-    })
+  export const updateAccount = ({
+    uid,
+    email,
+    password,
+  }: {
+    uid: string
+    email: string
+    password: string
+  }): ResultAsync<UpdateAccountResult, Error> => {
+    return ResultAsync.fromPromise(getAuth().updateUser(uid, { email, password }), (error) =>
+      firebaseAuthError(error, 'アカウント更新に失敗しました')
+    ).andThen((userRecord) =>
+      ok({
+        uid: userRecord.uid,
+        email: userRecord.email!,
+      })
+    )
+  }
+
+  /**
+   * トークンを検証する
+   */
+  export const verifyIdToken = (token: string): ResultAsync<string, Error> => {
+    return ResultAsync.fromPromise(getAuth().verifyIdToken(token), (error) =>
+      firebaseAuthError(error, 'トークンが無効です')
+    ).andThen((decodedToken) => ok(decodedToken.uid))
   }
 }
