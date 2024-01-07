@@ -32,6 +32,7 @@
     "package.json",
     "next.config.js",
     "panda.config.ts",
-    "postcss.config.cjs"
+    "postcss.config.cjs",
+    "graphql"
   ]
 }

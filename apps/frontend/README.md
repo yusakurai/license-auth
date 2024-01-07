@@ -15,3 +15,11 @@ $ pnpm dev
 ```bash
 $ pnpm test
 ```
+
+## GraphQL
+
+GraphQLのスキーマ定義やクエリから型定義を生成するには以下のコマンドを実行します。
+
+```bash
+$ pnpm generate
+```

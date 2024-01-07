@@ -1,22 +1,25 @@
-import { gql } from '@apollo/client'
 import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
 import { Button, Icon } from '@repo/ui'
 
 import { Counter } from '@/components'
+import { graphql } from '@/graphql'
 import { getClient } from '@/lib/apollo/client'
 
-const query = gql`
-  query {
-    pokemon(name: "Raichu") {
-      name
+const query = graphql(`
+  query GetUser($userId: ID!) {
+    user(id: $userId) {
+      id
+      firstName
+      fullName
     }
   }
-`
+`)
 
 export default async function Page(): Promise<JSX.Element> {
-  const { data } = await getClient().query<{ pokemon: { name: string } }>({
+  const { data } = await getClient().query({
     query,
+    variables: { userId: '1' },
   })
 
   return (
@@ -40,7 +43,7 @@ export default async function Page(): Promise<JSX.Element> {
         <Button variant="ghost">Button Ghost</Button>
       </div>
       <Counter />
-      <div>{data.pokemon.name}</div>
+      <div>{data.user?.fullName}</div>
       <div className={flex({ gap: 8, align: 'center' })}>
         <Icon name="User" />
         <Icon name="User" size="lg" color="secondary" />
