@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "panda:gen": "panda codegen",
+    "generate": "pnpm graphql-codegen --config codegen.ts",
     "clean": "pnpm clean:next",
     "clean:next": "rimraf .next",
     "dev": "next dev",
@@ -20,11 +21,14 @@
     "@apollo/client": "3.8.8",
     "@apollo/experimental-nextjs-app-support": "0.6.0",
     "@repo/ui": "workspace:*",
+    "graphql": "16.8.1",
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-typed-document-node/core": "3.2.0",
     "@next/eslint-plugin-next": "14.0.4",
     "@pandacss/dev": "0.25.0",
     "@repo/eslint-config": "workspace:*",

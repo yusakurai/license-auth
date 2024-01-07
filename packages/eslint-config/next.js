@@ -64,6 +64,6 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['.*.js', 'node_modules/', 'postcss.config.cjs'],
+  ignorePatterns: ['.*.js', 'node_modules/', 'postcss.config.cjs', 'graphql/'],
   overrides: [{ files: ['*.js?(x)', '*.ts?(x)'] }],
 }

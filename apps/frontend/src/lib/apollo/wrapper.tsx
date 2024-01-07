@@ -8,12 +8,14 @@ import {
   SSRMultipartLink,
 } from '@apollo/experimental-nextjs-app-support/ssr'
 
+import getEnvVar from '@/lib/env-var'
+
 import type { NormalizedCacheObject } from '@apollo/client'
 
 function makeClient(): NextSSRApolloClient<NormalizedCacheObject> {
+  const envVar = getEnvVar()
   const httpLink = new HttpLink({
-    // https://studio.apollographql.com/public/spacex-l4uc6p/
-    uri: 'https://graphql-pokemon2.vercel.app',
+    uri: envVar.graphqlEndpoint,
   })
 
   return new NextSSRApolloClient({
