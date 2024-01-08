@@ -14,7 +14,10 @@
     "lint:fix": "eslint './src/**/{*.js,*.cjs,*.ts}' --fix",
     "generate": "graphql-codegen --config ./src/graphql/codegen.ts --require dotenv/config",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "clean": "pnpm clean:tsbuildinfo; pnpm clean:dist",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig.tsbuildinfo"
   },
   "dependencies": {
     "@apollo/server": "4.10.0",
