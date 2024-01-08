@@ -8,12 +8,5 @@
     "incremental": true,
     "noEmit": false,
     "sourceMap": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "isolatedModules": false
-    },
-    "esm": true
-  },
-  "include": ["src"]
+  }
 }
