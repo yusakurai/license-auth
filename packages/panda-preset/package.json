@@ -7,10 +7,10 @@
     "build": "tsup src/index.ts --format=esm,cjs --clean --dts --external @pandacss/dev"
   },
   "dependencies": {
-    "@pandacss/dev": "^0.25.0"
+    "@pandacss/dev": "^0.27.3"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.25.0",
+    "@pandacss/types": "^0.27.3",
     "@repo/typescript-config": "workspace:*",
     "tsup": "^8.0.1"
   },
