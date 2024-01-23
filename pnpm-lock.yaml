@@ -158,11 +158,11 @@ importers:
   apps/frontend:
     dependencies:
       '@apollo/client':
-        specifier: 3.8.8
-        version: 3.8.8(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.8.10
+        version: 3.8.10(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@apollo/experimental-nextjs-app-support':
         specifier: 0.6.0
-        version: 0.6.0(@apollo/client@3.8.8)(next@14.1.0)(react@18.2.0)
+        version: 0.6.0(@apollo/client@3.8.10)(next@14.1.0)(react@18.2.0)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -426,8 +426,8 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@apollo/client@3.8.8(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-omjd9ryGDkadZrKW6l5ktUAdS4SNaFOccYQ4ZST0HLW83y8kQaSZOCTNlpkoBUK8cv6qP8+AxOKwLm2ho8qQ+Q==}
+  /@apollo/client@3.8.10(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-p/22RZ8ehHyvySnC20EHPPe0gdu8Xp6ZCiXOfdEe1ZORw5cUteD/TLc66tfKv8qu8NLIfbiWoa+6s70XnKvxqg==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -461,14 +461,14 @@ packages:
       zen-observable-ts: 1.2.5
     dev: false
 
-  /@apollo/experimental-nextjs-app-support@0.6.0(@apollo/client@3.8.8)(next@14.1.0)(react@18.2.0):
+  /@apollo/experimental-nextjs-app-support@0.6.0(@apollo/client@3.8.10)(next@14.1.0)(react@18.2.0):
     resolution: {integrity: sha512-mtkbskOfzasBlqe5mLTu79pd1YuJ2fNuWHE+j5v4P//ZAHG30D2L+l0D/zuZISPFVEfFOdgSkIzR0U60uQ2GSg==}
     peerDependencies:
       '@apollo/client': '>=3.8.0-rc || ^3.8.0 || >=3.9.0-alpha || >=3.9.0-beta || >=3.9.0-rc'
       next: ^13.4.1 || ^14.0.0
       react: ^18
     dependencies:
-      '@apollo/client': 3.8.8(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@apollo/client': 3.8.10(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
       next: 14.1.0(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       server-only: 0.0.1

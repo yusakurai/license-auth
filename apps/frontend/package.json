@@ -18,7 +18,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@apollo/client": "3.8.8",
+    "@apollo/client": "3.8.10",
     "@apollo/experimental-nextjs-app-support": "0.6.0",
     "@repo/ui": "workspace:*",
     "graphql": "16.8.1",
