@@ -6,5 +6,6 @@ declare namespace NodeJS {
     readonly PORT: number
     readonly GRAPHQL_PATH: string
     readonly FIREBASE_CREDENTIAL_FILE_NAME: string
+    readonly DATABASE_URL: string
   }
 }

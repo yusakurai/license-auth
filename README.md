@@ -20,6 +20,12 @@ $ pnpm build
 $ pnpm dev
 ```
 
+4. Start local database
+
+```bash
+$ docker compose up -d
+```
+
 ## Running Linter
 
 ESLintを走らせる場合は以下のコマンドを実行します。
