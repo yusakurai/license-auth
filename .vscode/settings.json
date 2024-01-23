@@ -34,5 +34,8 @@
     "panda.config.ts",
     "postcss.config.cjs",
     "graphql"
-  ]
+  ],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }
