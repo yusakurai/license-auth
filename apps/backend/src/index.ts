@@ -24,6 +24,7 @@ await app.register(fastifyApollo(apollo), {
 })
 
 app.get('/', () => 'This is license-auth backend!')
+app.get('/health', () => ({ status: 'ok' }))
 
 try {
   const port = process.env.PORT

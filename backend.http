@@ -9,6 +9,9 @@
 ### root
 GET {{baseUrl}}
 
+### health
+GET {{baseUrl}}/health
+
 ### graphql
 POST {{baseUrl}}/graphql
 content-type: application/json
