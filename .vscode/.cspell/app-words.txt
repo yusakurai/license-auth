@@ -1,5 +1,6 @@
 # Custom Dictionary Words
 autodocs
+birthdate
 Codegen
 fastify
 firestore

@@ -17,9 +17,29 @@ generator erd {
 }
 
 model User {
-  createdAt DateTime @default(now()) @db.Timestamptz
-  updatedAt DateTime @updatedAt @db.Timestamptz
-  id        String   @id @unique @default(uuid()) @db.Uuid
-  name      String
-  email     String   @unique
+  id          String   @id @unique @db.Uuid
+  createdAt   DateTime @default(now()) @db.Timestamptz
+  updatedAt   DateTime @updatedAt @db.Timestamptz
+  name        String
+  nameKana    String
+  email       String   @unique
+  birthday    DateTime @db.Date
+  gender      Gender
+  locale      Locale
+  zipCode     String
+  address1    String
+  address2    String
+  phoneNumber String
+  fcmtoken    String?
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+enum Locale {
+  Ja
+  En
 }
