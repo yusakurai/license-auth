@@ -1,5 +1,5 @@
-import * as icons from '@repo/icon'
 import { cva } from '@license-auth/styled-system/css'
+import * as icons from '@repo/icon'
 
 /** Types */
 type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'

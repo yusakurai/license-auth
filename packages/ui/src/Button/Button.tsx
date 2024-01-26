@@ -1,6 +1,6 @@
-import { Slot } from '@radix-ui/react-slot'
 import type { RecipeVariantProps } from '@license-auth/styled-system/css'
 import { cva } from '@license-auth/styled-system/css'
+import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
 /**

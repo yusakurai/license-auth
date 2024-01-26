@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { flex } from '@license-auth/styled-system/patterns'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './Button'
 

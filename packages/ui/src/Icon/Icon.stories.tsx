@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import * as icons from '@repo/icon'
 import { css } from '@license-auth/styled-system/css'
 import { flex } from '@license-auth/styled-system/patterns'
+import * as icons from '@repo/icon'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { Icon } from './Icon'
 

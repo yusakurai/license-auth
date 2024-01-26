@@ -15,13 +15,27 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: ['eslint:recommended', 'prettier', 'eslint-config-turbo'],
-  plugins: ['only-warn'],
+  plugins: ['only-warn', 'import', 'unused-imports'],
+  parser: '@typescript-eslint/parser',
   globals: {
-    React: true,
     JSX: true,
   },
   env: {
     browser: true,
+  },
+  rules: {
+    'unused-imports/no-unused-imports': 'warn',
+    'unused-imports/no-unused-vars': 'off',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
+    'import/no-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
   settings: {
     'import/resolver': {
