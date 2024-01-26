@@ -16,10 +16,23 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 module.exports = {
   extends: ['eslint:recommended', 'prettier', 'eslint-config-turbo'],
   plugins: ['only-warn', 'import', 'unused-imports'],
+  // FIXME: これを設定すると__dirnameの未定義エラーは解消するが、pnpm lint でエラーが出る
+  // parserOptions: {
+  //   project,
+  // },
+  // FIXME: これを設定すると__dirnameの未定義エラーが出る。pnpm lint は正常。
   parser: '@typescript-eslint/parser',
   globals: {
     JSX: true,
   },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project,
+      },
+    },
+  },
+  ignorePatterns: ['.*.js', 'node_modules/', 'dist/', 'postcss.config.cjs'],
   env: {
     browser: true,
   },
@@ -37,16 +50,4 @@ module.exports = {
     'import/no-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
   },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        project,
-      },
-    },
-  },
-  ignorePatterns: ['.*.js', 'node_modules/', 'dist/', 'postcss.config.cjs'],
-  overrides: [
-    // Force ESLint to detect .tsx files
-    { files: ['*.js?(x)', '*.ts?(x)'] },
-  ],
 }
