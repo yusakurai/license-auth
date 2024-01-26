@@ -1,0 +1,4 @@
+# generated files
+src/prisma/migrations/
+src/prisma/seed-data/
+src/prisma/ERD.md

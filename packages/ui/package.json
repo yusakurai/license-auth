@@ -11,15 +11,21 @@
     }
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
     "panda:gen": "panda codegen",
     "ship": "panda ship src/**/*.tsx --outfile dist/panda.json",
-    "build:style": "pnpm panda:gen && pnpm ship",
     "build": "pnpm build:style && vite build && tsc --project tsconfig.build.json",
+    "build:style": "pnpm panda:gen && pnpm ship",
+    "build:pkg": "pnpm build",
     "generate:component": "turbo gen react-component",
-    "test": "vitest run",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --check --write",
+    "lint": "eslint './src/**/{*.js,*.jsx,*.ts,*.tsx}' --max-warnings 0",
+    "lint:fix": "eslint './src/**/{*.js,*.jsx,*.ts,*.tsx}' --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest run",
+    "clean": "pnpm clean:dist",
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2"
@@ -27,9 +33,9 @@
   "devDependencies": {
     "@pandacss/dev": "0.27.3",
     "@repo/eslint-config": "workspace:*",
+    "@repo/icon": "workspace:*",
     "@repo/panda-preset": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@repo/icon": "workspace:*",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
     "@storybook/addon-links": "^7.6.10",

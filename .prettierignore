@@ -8,12 +8,12 @@
 /coverage
 
 # next.js
-apps/frontend/.next/
-apps/frontend/out/
+apps/**/.next/
+apps/**/out/
 
 # production
 /build
-apps/backend/dist
+apps/**/dist
 
 # misc
 .DS_Store
