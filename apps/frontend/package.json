@@ -4,8 +4,6 @@
   "scripts": {
     "panda:gen": "panda codegen",
     "generate": "pnpm graphql-codegen --config codegen.ts",
-    "clean": "pnpm clean:next",
-    "clean:next": "rimraf .next",
     "dev": "next dev",
     "build": "pnpm panda:gen && next build",
     "start": "next start",
@@ -15,7 +13,9 @@
     "lint:fix": "eslint './src/**/{*.js,*.jsx,*.ts,*.tsx}' --fix",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "clean": "pnpm clean:next",
+    "clean:next": "rimraf .next"
   },
   "dependencies": {
     "@apollo/client": "3.8.10",
