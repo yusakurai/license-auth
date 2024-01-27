@@ -17,11 +17,11 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier', 'eslint-config-turbo'],
   plugins: ['only-warn', 'import', 'unused-imports'],
   // FIXME: これを設定すると__dirnameの未定義エラーは解消するが、pnpm lint でエラーが出る
-  // parserOptions: {
-  //   project,
-  // },
+  parserOptions: {
+    project,
+  },
   // FIXME: これを設定すると__dirnameの未定義エラーが出る。pnpm lint は正常。
-  parser: '@typescript-eslint/parser',
+  // parser: '@typescript-eslint/parser',
   globals: {
     JSX: true,
   },
