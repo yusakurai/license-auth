@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 describe('Icon', () => {
   describe('Rendering', () => {
     test('レンダリングされるか', () => {
-      const { container } = render(<Icon name="User" />)
+      const { container } = render(<Icon iconName="User" />)
 
       expect(container.querySelector('svg')).toBeDefined()
     })

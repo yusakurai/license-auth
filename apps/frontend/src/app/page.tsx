@@ -45,9 +45,9 @@ export default async function Page(): Promise<JSX.Element> {
       <Counter />
       <div>{data.user?.fullName}</div>
       <div className={flex({ gap: 8, align: 'center' })}>
-        <Icon name="User" />
-        <Icon name="User" size="lg" color="secondary" />
-        <Icon name="Clock" size="sm" />
+        <Icon iconName="User" />
+        <Icon iconName="User" size="lg" color="secondary" />
+        <Icon iconName="Clock" size="sm" />
       </div>
     </main>
   )
