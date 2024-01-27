@@ -1,10 +1,11 @@
 {
-  "extends": "@repo/typescript-config/backend.json",
+  // FIXME: ./node_modulesをつけないと not foundになる。https://github.com/TypeStrong/ts-node/pull/2091
+  "extends": "./node_modules/@repo/typescript-config/backend.json",
   "compilerOptions": {
     "outDir": "./dist",
     "baseUrl": "./src",
-    "rootDir": "./src"
+    "rootDir": "./src",
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
