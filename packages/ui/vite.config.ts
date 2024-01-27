@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   build: {
@@ -12,5 +12,9 @@ export default defineConfig({
     rollupOptions: {
       external: ['@pandacss/dev', '@license-auth/styled-system'],
     },
+  },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
   },
 })
