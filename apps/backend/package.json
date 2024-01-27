@@ -19,7 +19,10 @@
     "prisma:seed": "prisma db seed",
     "prisma:studio": "prisma studio --schema=./src/prisma/schema.prisma",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "clean": "pnpm clean:tsbuildinfo; pnpm clean:dist",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig.tsbuildinfo"
   },
   "prisma": {
     "seed": "tsx ./src/prisma/seed.ts"
