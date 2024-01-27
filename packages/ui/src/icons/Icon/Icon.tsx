@@ -2,13 +2,16 @@ import { cva } from '@license-auth/styled-system/css'
 import * as icons from '@repo/icon'
 
 /** Types */
-type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
-type IconColor = 'primary' | 'secondary'
-type IconName = keyof typeof icons
+export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+export type IconColor = 'primary' | 'secondary'
+export type IconName = keyof typeof icons
 
 interface IconProps {
-  name: IconName
+  /** アイコン名 */
+  iconName: IconName
+  /** アイコンの色 */
   color?: IconColor
+  /** アイコンのサイズ */
   size?: IconSize
 }
 
@@ -35,8 +38,8 @@ const iconStyles = cva({
   },
 })
 
-export function Icon({ name, color, size }: IconProps): JSX.Element {
-  const IconComponent = icons[name]
+export function Icon({ iconName, color, size }: IconProps): React.ReactElement {
+  const IconComponent = icons[iconName]
 
   return <IconComponent className={iconStyles({ color, size })} />
 }

@@ -12,10 +12,10 @@ const meta = {
     layout: 'centered',
   },
   args: {
-    name: 'User',
+    iconName: 'User',
   },
   argTypes: {
-    name: {
+    iconName: {
       control: {
         type: 'select',
       },
@@ -45,8 +45,8 @@ export const Colors: Story = {
   render: () => {
     return (
       <div className={flex({ gap: 2, alignItems: 'end' })}>
-        <Icon color="primary" name="User" />
-        <Icon color="secondary" name="User" />
+        <Icon color="primary" iconName="User" />
+        <Icon color="secondary" iconName="User" />
       </div>
     )
   },
@@ -56,13 +56,13 @@ export const Sizes: Story = {
   render: () => {
     return (
       <div className={flex({ gap: 2, alignItems: 'end' })}>
-        <Icon name="User" size="xs" />
-        <Icon name="User" size="sm" />
-        <Icon name="User" size="md" />
-        <Icon name="User" size="lg" />
-        <Icon name="User" size="xl" />
-        <Icon name="User" size="2xl" />
-        <Icon name="User" size="3xl" />
+        <Icon iconName="User" size="xs" />
+        <Icon iconName="User" size="sm" />
+        <Icon iconName="User" size="md" />
+        <Icon iconName="User" size="lg" />
+        <Icon iconName="User" size="xl" />
+        <Icon iconName="User" size="2xl" />
+        <Icon iconName="User" size="3xl" />
       </div>
     )
   },
@@ -80,7 +80,7 @@ export const Icons: Story = {
               className={flex({ gap: 1, alignItems: 'center', flexDirection: 'column' })}
               key={iconName}
             >
-              <Icon name={name} size="sm" />
+              <Icon iconName={name} size="sm" />
               <span className={css({ fontSize: '12px' })}>{iconName}</span>
             </div>
           )
