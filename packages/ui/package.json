@@ -31,7 +31,7 @@
     "@radix-ui/react-slot": "1.0.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.27.3",
+    "@pandacss/dev": "0.28.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/icon": "workspace:*",
     "@repo/panda-preset": "workspace:*",
