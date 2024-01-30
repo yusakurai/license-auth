@@ -14,13 +14,20 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ['eslint:recommended', 'prettier', 'eslint-config-turbo'],
+  // NOTE: vercel/style-guide/eslint/typescriptの中でparserOptionsにecmaVarsionとsorceTypeが指定されていて、その指定がないとParsing error: The keyword 'export' is reservedというエラーが出ている
+  // https://github.dev/vercel/style-guide/tree/canary/eslint
+  extends: [
+    '@vercel/style-guide/eslint/browser',
+    '@vercel/style-guide/eslint/typescript',
+    '@vercel/style-guide/eslint/react',
+    'eslint-config-turbo',
+  ].map(require.resolve),
   plugins: ['only-warn', 'import', 'unused-imports'],
-  // FIXME: これを設定すると__dirnameの未定義エラーは解消するが、pnpm lint でエラーが出る
   parserOptions: {
     project,
   },
-  // FIXME: これを設定すると__dirnameの未定義エラーが出る。pnpm lint は正常。
+  // NOTE: これを設定すると__dirnameの未定義エラーが出る。pnpm lint は正常。
+  // parserOptionsを内部で指定してくれるので@vercel/style-guide/eslint/typescript の代替案として使用しても良い。
   // parser: '@typescript-eslint/parser',
   globals: {
     JSX: true,
@@ -37,6 +44,16 @@ module.exports = {
     browser: true,
   },
   rules: {
+    'unicorn/filename-case': [
+      'error',
+      {
+        cases: {
+          kebabCase: true,
+          pascalCase: true,
+        },
+        ignore: ['^.+\\.tsx$'],
+      },
+    ],
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': 'off',
     'import/order': [
