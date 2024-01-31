@@ -110,6 +110,7 @@ const buttonStyle = cva({
 export type ButtonVariants = RecipeVariantProps<typeof buttonStyle>
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariants & {
+    /** button要素以外の要素をスロットに指定するか */
     asChild?: boolean
   }
 

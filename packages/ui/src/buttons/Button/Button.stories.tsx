@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 
 const meta = {
-  title: 'Example/Button',
+  title: 'Components/buttons/Button',
   component: Button,
   parameters: {
     layout: 'centered',
@@ -27,6 +27,9 @@ const meta = {
       control: {
         type: 'select',
       },
+    },
+    onClick: {
+      action: 'clicked',
     },
   },
   tags: ['autodocs'],
