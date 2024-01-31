@@ -350,7 +350,7 @@ importers:
         version: link:../typescript-config
       '@storybook/addon-designs':
         specifier: 7.0.9
-        version: 7.0.9(@storybook/addon-docs@7.6.10)(@storybook/addons@7.6.11)(@storybook/components@7.6.10)(@storybook/manager-api@7.6.10)(@storybook/preview-api@7.6.10)(@storybook/theming@7.6.10)(react-dom@18.2.0)(react@18.2.0)
+        version: 7.0.9(@storybook/addon-docs@7.6.10)(@storybook/addons@7.6.11)(@storybook/components@7.6.10)(@storybook/manager-api@7.6.11)(@storybook/preview-api@7.6.11)(@storybook/theming@7.6.11)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: ^7.6.10
         version: 7.6.10(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -399,6 +399,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: 4.2.1
         version: 4.2.1(vite@5.0.12)
+      chromatic:
+        specifier: 10.6.1
+        version: 10.6.1
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -5326,7 +5329,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-designs@7.0.9(@storybook/addon-docs@7.6.10)(@storybook/addons@7.6.11)(@storybook/components@7.6.10)(@storybook/manager-api@7.6.10)(@storybook/preview-api@7.6.10)(@storybook/theming@7.6.10)(react-dom@18.2.0)(react@18.2.0):
+  /@storybook/addon-designs@7.0.9(@storybook/addon-docs@7.6.10)(@storybook/addons@7.6.11)(@storybook/components@7.6.10)(@storybook/manager-api@7.6.11)(@storybook/preview-api@7.6.11)(@storybook/theming@7.6.11)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-xJdw1/FgkC8ovTdRIL5FyEJaXtF1XPxsb6rsl2jByG+8tXyM0PJ/yFEkBrqn35Dei2i4N7x8EHXFd8DnzriBRg==}
     peerDependencies:
       '@storybook/addon-docs': ^7.0.0
@@ -5347,9 +5350,9 @@ packages:
       '@storybook/addon-docs': 7.6.10(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addons': 7.6.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/components': 7.6.10(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/manager-api': 7.6.10(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/preview-api': 7.6.10
-      '@storybook/theming': 7.6.10(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/manager-api': 7.6.11(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.6.11
+      '@storybook/theming': 7.6.11(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
@@ -8535,6 +8538,19 @@ packages:
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
+
+  /chromatic@10.6.1:
+    resolution: {integrity: sha512-bd4C5sEEtN83uUmbc4Fu+x7+lJIPdMUdu4D6HRDQEIDl/Tatc8+By4bZluH1pzg/MbP9vllkL6Ua9vF4EEA7VA==}
+    hasBin: true
+    peerDependencies:
+      chromatic-cypress: ^0.4.0 || ^1.0.0
+      chromatic-playwright: ^0.4.0 || ^1.0.0
+    peerDependenciesMeta:
+      chromatic-cypress:
+        optional: true
+      chromatic-playwright:
+        optional: true
+    dev: true
 
   /chromium-bidi@0.4.7(devtools-protocol@0.0.1107588):
     resolution: {integrity: sha512-6+mJuFXwTMU6I3vYLs6IL8A1DyQTPjCfIL971X0aMPVGRbGnNfl6i6Cl0NMbxi2bRYLGESt9T2ZIMRM5PAEcIQ==}

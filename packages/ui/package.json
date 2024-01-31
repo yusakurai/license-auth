@@ -25,7 +25,8 @@
     "build-storybook": "storybook build",
     "test": "vitest run",
     "clean": "pnpm clean:dist",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2"
@@ -53,6 +54,7 @@
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "@vitejs/plugin-react": "4.2.1",
+    "chromatic": "10.6.1",
     "eslint": "8.56.0",
     "eslint-plugin-storybook": "0.6.15",
     "react": "18.2.0",
