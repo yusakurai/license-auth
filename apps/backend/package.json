@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm prisma:generate && tsc",
     "dev": "tsx watch --env-file=.env ./src/index.ts",
     "server:dev": "node --enable-source-maps dist/index.js",
     "server:test": "node --enable-source-maps dist/index.js",
