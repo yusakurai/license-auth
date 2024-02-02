@@ -326,6 +326,9 @@ importers:
       '@pandacss/dev':
         specifier: ^0.28.0
         version: 0.28.0(typescript@5.3.3)
+      '@radix-ui/colors':
+        specifier: 3.0.0
+        version: 3.0.0
     devDependencies:
       '@pandacss/types':
         specifier: ^0.28.0
@@ -4649,6 +4652,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@radix-ui/colors@3.0.0:
+    resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
+    dev: false
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}

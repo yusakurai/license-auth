@@ -7,7 +7,8 @@
     "build": "tsup src/index.ts --format=esm,cjs --clean --dts --external @pandacss/dev"
   },
   "dependencies": {
-    "@pandacss/dev": "^0.28.0"
+    "@pandacss/dev": "^0.28.0",
+    "@radix-ui/colors": "3.0.0"
   },
   "devDependencies": {
     "@pandacss/types": "^0.28.0",

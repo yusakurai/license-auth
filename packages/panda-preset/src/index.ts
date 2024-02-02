@@ -1,19 +1,12 @@
 import { definePreset } from '@pandacss/dev'
-import type { Preset } from '@pandacss/types'
+import { tokens } from './tokens'
+import { semanticTokens } from './semantic-tokens'
 
 export const corePreset = definePreset({
   theme: {
     extend: {
-      semanticTokens: {
-        colors: {
-          primary: {
-            DEFAULT: { value: '#008b8b' },
-          },
-          secondary: {
-            DEFAULT: { value: '#f08080' },
-          },
-        },
-      },
+      tokens,
+      semanticTokens,
     },
   },
-}) as Preset
+})
