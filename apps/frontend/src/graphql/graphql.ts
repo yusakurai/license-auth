@@ -38,6 +38,14 @@ export type Comment = {
   post: Post;
 };
 
+export type CreateAccountResponse = {
+  __typename?: 'CreateAccountResponse';
+  /** メールアドレス */
+  email: Scalars['EmailAddress']['output'];
+  /** ユーザーID */
+  uid: Scalars['String']['output'];
+};
+
 export type EmailAndPasswordInput = {
   /** メールアドレス */
   email: Scalars['EmailAddress']['input'];
@@ -47,12 +55,21 @@ export type EmailAndPasswordInput = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  signIn: SignInResponse;
+  /** 認証アカウントを作成する */
+  createAccount: CreateAccountResponse;
+  /** 認証アカウントを更新する */
+  updateAccount: UpdateAccountResponse;
 };
 
 
-export type MutationSignInArgs = {
+export type MutationCreateAccountArgs = {
   input: EmailAndPasswordInput;
+};
+
+
+export type MutationUpdateAccountArgs = {
+  input: EmailAndPasswordInput;
+  uid: Scalars['String']['input'];
 };
 
 export type Post = {
@@ -87,10 +104,12 @@ export type QueryUserArgs = {
   id: Scalars['ID']['input'];
 };
 
-export type SignInResponse = {
-  __typename?: 'SignInResponse';
-  /** アクセストークン */
-  accessToken: Scalars['JWT']['output'];
+export type UpdateAccountResponse = {
+  __typename?: 'UpdateAccountResponse';
+  /** メールアドレス */
+  email: Scalars['EmailAddress']['output'];
+  /** ユーザーID */
+  uid: Scalars['String']['output'];
 };
 
 export type User = {

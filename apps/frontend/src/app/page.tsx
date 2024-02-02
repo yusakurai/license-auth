@@ -49,6 +49,17 @@ export default async function Page(): Promise<JSX.Element> {
         <Icon iconName="User" size="lg" color="secondary" />
         <Icon iconName="Clock" size="sm" />
       </div>
+      <div className={flex({ gap: 8, align: 'center' })}>
+        <Button>
+          <a href="/api/auth/login">Log In</a>
+        </Button>
+        <Button>
+          <a href="/api/auth/signup">Sign Up</a>
+        </Button>
+        <Button>
+          <a href="/api/auth/logout">Log Out</a>
+        </Button>
+      </div>
     </main>
   )
 }
