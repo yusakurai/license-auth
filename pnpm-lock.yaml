@@ -71,6 +71,12 @@ importers:
       graphql-scalars:
         specifier: 1.22.4
         version: 1.22.4(graphql@16.8.1)
+      jsonwebtoken:
+        specifier: 9.0.2
+        version: 9.0.2
+      jwks-rsa:
+        specifier: 3.1.0
+        version: 3.1.0
       neverthrow:
         specifier: 6.1.0
         version: 6.1.0
@@ -111,6 +117,9 @@ importers:
       '@types/jest':
         specifier: 29.5.11
         version: 29.5.11
+      '@types/jsonwebtoken':
+        specifier: 9.0.5
+        version: 9.0.5
       '@types/node':
         specifier: 20.11.10
         version: 20.11.10
@@ -6844,7 +6853,6 @@ packages:
     resolution: {integrity: sha512-VRLSGzik+Unrup6BsouBeHsf4d1hOEgYWTm/7Nmw1sXoN1+tRly/Gy/po3yeahnP4jfnQWWAhQAqcNfH7ngOkA==}
     dependencies:
       '@types/node': 20.11.10
-    dev: false
 
   /@types/lodash@4.14.202:
     resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}

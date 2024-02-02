@@ -1,4 +1,3 @@
-/* eslint-disable no-redeclare */
 import { Comment } from './comment.js'
 import { Post } from './post.js'
 import { Comments, Posts, IUser } from '../../dummy-data.js'

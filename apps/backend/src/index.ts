@@ -7,14 +7,20 @@ import Fastify from 'fastify'
 
 import { createContext } from './graphql/context.js'
 import { createApolloServer } from './graphql/server.js'
+import getEnvVar from './lib/env-var.js'
 
-const graphqlPath = process.env.GRAPHQL_PATH
+const { nodeEnv, port, graphqlPath } = getEnvVar()
 
 const app = Fastify()
+
 const apollo = createApolloServer({ app })
+
 await apollo.start()
 
-await app.register(helmet, { contentSecurityPolicy: process.env.NODE_ENV === 'production' })
+await app.register(helmet, {
+  contentSecurityPolicy: nodeEnv === 'production',
+})
+
 await app.register(cors)
 await app.register(rateLimit)
 await app.register(compress)
@@ -27,7 +33,6 @@ app.get('/', () => 'This is license-auth backend!')
 app.get('/health', () => ({ status: 'ok' }))
 
 try {
-  const port = process.env.PORT
   console.log('🏗 Starting server...')
   console.log(`✨ Listening on port ${port}`)
   console.log(`🚀 GraphQL server at http://localhost:${port}${graphqlPath}`)

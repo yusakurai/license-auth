@@ -5,6 +5,7 @@ Codegen
 fastify
 firestore
 hstack
+jwks
 neverthrow
 pandacss
 pothos
