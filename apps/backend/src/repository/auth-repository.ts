@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken'
 import jwksClient from 'jwks-rsa'
 import { errAsync, ok, ResultAsync } from 'neverthrow'
 
-import getEnvVar from '../lib/env-var.js'
 import { firebaseAuthError, getAuth } from '../lib/index.js'
 
 import type { JwtPayload } from 'jsonwebtoken'
@@ -61,7 +60,8 @@ export namespace AuthRepository {
    * JWT署名用の公開鍵を取得する
    */
   const _getPublicKey = (accessToken: string): ResultAsync<string, Error> => {
-    const { auth0JwksUrl } = getEnvVar()
+    // const { auth0JwksUrl } = getEnvVar()
+    const auth0JwksUrl = process.env.AUTH0_JWKS_URL
 
     // JWTをデコードして、公開鍵用のkidを取得
     const decoded = jwt.decode(accessToken, { complete: true })
@@ -84,7 +84,9 @@ export namespace AuthRepository {
    */
   export const verifyToken = (accessToken: string): ResultAsync<JwtPayload, Error> => {
     return _getPublicKey(accessToken).andThen((publicKey) => {
-      const { auth0Audience, auth0Issuer } = getEnvVar()
+      // const { auth0Audience, auth0Issuer } = getEnvVar()
+      const auth0Audience = process.env.AUTH0_AUDIENCE
+      const auth0Issuer = process.env.AUTH0_ISSUER
 
       try {
         const payload = jwt.verify(accessToken, publicKey, {
