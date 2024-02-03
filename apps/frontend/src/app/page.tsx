@@ -16,7 +16,7 @@ const query = graphql(`
   }
 `)
 
-export default async function Page(): Promise<JSX.Element> {
+export default async function Page(): Promise<React.ReactElement> {
   const { data } = await getClient().query({
     query,
     variables: { userId: '1' },
@@ -24,13 +24,16 @@ export default async function Page(): Promise<JSX.Element> {
 
   return (
     <main>
-      <h1 className={css({ color: 'primary' })}>H1 Hello Primary🐼!</h1>
-      <h2 className={css({ color: 'secondary' })}>H2 Hello Secondary🐼!</h2>
-      <div className={flex({ background: 'primary' })}>Primary Background</div>
-      <div className={flex({ background: 'secondary' })}>Secondary Background</div>
-      <div className={css({ fontWeight: 'bold' })}>fontWeight: 'bold'</div>
-      <div className={css({ fontSize: '2xl' })}>fontSize: '2xl'</div>
-      <div className={css({ fontSize: '3xl' })}>fontSize: '3xl'</div>
+      <div className={css({ m: 8 })}>
+        <h1 className={css({ color: 'primary' })}>H1 Hello Primary🐼!</h1>
+        <h2 className={css({ color: 'secondary' })}>H2 Hello Secondary🐼!</h2>
+        <div className={flex({ background: 'primary' })}>Primary Background</div>
+        <div className={flex({ background: 'secondary' })}>Secondary Background</div>
+        <div className={css({ fontWeight: 'bold' })}>fontWeight: 'bold'</div>
+        <div className={css({ fontSize: '2xl' })}>fontSize: '2xl'</div>
+        <div className={css({ fontSize: '3xl' })}>fontSize: '3xl'</div>
+      </div>
+
       <div className={flex({ gap: 8, align: 'center' })}>
         <Button>Button</Button>
         <Button colors="primary">Button Primary</Button>
@@ -44,11 +47,13 @@ export default async function Page(): Promise<JSX.Element> {
       </div>
       <Counter />
       <div>{data.user?.fullName}</div>
+
       <div className={flex({ gap: 8, align: 'center' })}>
         <Icon iconName="User" />
         <Icon iconName="User" size="lg" color="secondary" />
         <Icon iconName="Clock" size="sm" />
       </div>
+
       <div className={flex({ gap: 8, align: 'center' })}>
         <Button>
           <a href="/api/auth/login">Log In</a>

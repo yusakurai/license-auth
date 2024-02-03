@@ -9,5 +9,6 @@ jwks
 neverthrow
 pandacss
 pothos
+signup
 turborepo
 vitest
