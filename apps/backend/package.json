@@ -38,7 +38,7 @@
     "@pothos/plugin-scope-auth": "3.20.0",
     "@pothos/plugin-simple-objects": "3.7.0",
     "@prisma/client": "5.8.1",
-    "dotenv": "16.4.1",
+    "dotenv": "16.4.2",
     "fastify": "4.25.2",
     "firebase-admin": "12.0.0",
     "graphql": "16.8.1",
