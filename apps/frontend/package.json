@@ -18,7 +18,7 @@
     "clean:next": "rimraf .next"
   },
   "dependencies": {
-    "@apollo/client": "3.8.10",
+    "@apollo/client": "3.9.5",
     "@apollo/experimental-nextjs-app-support": "0.8.0",
     "@auth0/nextjs-auth0": "3.5.0",
     "@repo/ui": "workspace:*",
