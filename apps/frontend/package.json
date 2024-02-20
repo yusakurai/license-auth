@@ -28,7 +28,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/cli": "5.0.2",
     "@graphql-typed-document-node/core": "3.2.0",
     "@next/eslint-plugin-next": "14.1.0",
     "@pandacss/dev": "0.28.0",
