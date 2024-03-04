@@ -50,7 +50,7 @@
     "@storybook/react-vite": "^7.6.16",
     "@storybook/test": "^7.6.16",
     "@storybook/theming": "7.6.16",
-    "@testing-library/react": "14.1.2",
+    "@testing-library/react": "14.2.1",
     "@turbo/gen": "1.12.4",
     "@types/eslint": "8.56.2",
     "@types/node": "20.11.10",
