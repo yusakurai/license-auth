@@ -35,7 +35,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/panda-preset": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@testing-library/react": "14.1.2",
+    "@testing-library/react": "14.2.2",
     "@types/eslint": "8.56.2",
     "@types/node": "20.11.10",
     "@types/react": "18.2.57",
