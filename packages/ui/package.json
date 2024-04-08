@@ -51,7 +51,7 @@
     "@storybook/test": "^7.6.16",
     "@storybook/theming": "7.6.16",
     "@testing-library/react": "14.1.2",
-    "@turbo/gen": "1.12.4",
+    "@turbo/gen": "1.13.2",
     "@types/eslint": "8.56.2",
     "@types/node": "20.11.10",
     "@types/react": "18.2.57",
